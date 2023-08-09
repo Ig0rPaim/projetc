@@ -1,0 +1,14 @@
+"Software de construção civil" refere-se a programas e aplicativos utilizados na indústria da construção para auxiliar em várias tarefas, desde o planejamento e gerenciamento de projetos até a supervisão e execução no canteiro de obras. Aqui estão alguns exemplos de software de construção civil populares em português:
+
+TQS: Um software de análise estrutural e dimensionamento de estruturas de concreto armado, bastante usado por engenheiros civis.
+
+Sienge: Um sistema de gestão específico para a construção civil, abrangendo desde a gestão de projetos até a gestão financeira.
+
+Pacote Office (Excel, Word, PowerPoint): Embora não sejam exclusivamente de construção civil, essas ferramentas são amplamente usadas para documentação, cálculos e apresentações na indústria.
+
+Primavera P6: Um software de gerenciamento de projetos amplamente utilizado na indústria da construção para planejamento, programação e controle de projetos.
+
+Tekla Structures: Um software de modelagem e detalhamento de estruturas em aço e concreto utilizado em projetos de construção.
+
+Asta Powerproject: Um software de programação e gerenciamento de projetos, focado na indústria de construção.
+
