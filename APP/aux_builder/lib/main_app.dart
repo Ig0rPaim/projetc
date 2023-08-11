@@ -1,6 +1,8 @@
 import 'package:aux_builder/home_screen.dart';
-import 'package:aux_builder/project_app.dart';
+import 'package:aux_builder/project_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:aux_builder/planning/client_contract_screen.dart';
+import 'package:aux_builder/planning/details_project.dart';
 
 void main() {
   runApp(aux_builder());
@@ -20,7 +22,7 @@ class aux_builder extends StatelessWidget {
         primaryColorLight: Color(0xFFC5CAE9),
         accentColor: Color(0xFF7C4DFF),
       ),
-      home: ProjectApp(),
+      home: DetailsOfProject(),
       // routes:,
     );
   }

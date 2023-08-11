@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BuilderButtons {
@@ -10,9 +10,54 @@ class BuilderButtons {
 
 }
 
+class ScreenWithTwoButtons extends BuilderButtons{
+    Widget button(BuildContext context, String text){
+    List<double> contextScreen;
+    contextScreen = sizeOfContext(context,  0.469);
+    double width = contextScreen[0];
+    double height = contextScreen[1];
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 35.0),
+      ),
+      style: ElevatedButton.styleFrom(
+        // shape: CircleBorder(),
+        primary: Color(0xFF7C4DFF),
+        shadowColor: Color(0xFFC5CAE9),
+        fixedSize: Size(width, height),
+      ),
+    );
+  }
+}
+
+
+class ScreenWithThreeButtons extends BuilderButtons{
+    Widget button(BuildContext context, String text){
+    List<double> contextScreen;
+    contextScreen = sizeOfContext(context,  0.309);
+    double width = contextScreen[0];
+    double height = contextScreen[1];
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 35.0),
+      ),
+      style: ElevatedButton.styleFrom(
+        // shape: CircleBorder(),
+        primary: Color(0xFF7C4DFF),
+        shadowColor: Color(0xFFC5CAE9),
+        fixedSize: Size(width, height),
+      ),
+    );
+  }
+}
+
 
 class Planning extends BuilderButtons{
-    bool done = false;
+    bool done = true;
 
     // bool get done {
     //   return done;
@@ -46,7 +91,7 @@ class Planning extends BuilderButtons{
 class AddNewProject extends BuilderButtons{
   Widget addNewProject(BuildContext context) {
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context, 0.1);
+    contextScreen = sizeOfContext(context, 0.05);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
@@ -63,47 +108,47 @@ class AddNewProject extends BuilderButtons{
 }
 
 
-class Execution extends BuilderButtons{
-    Widget execution(BuildContext context){
-    List<double> contextScreen;
-    contextScreen = sizeOfContext(context, 0.40);
-    double width = contextScreen[0];
-    double height = contextScreen[1];
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(
-        'Execução',
-        style: TextStyle(fontSize: 35.0),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: CircleBorder(),
-        primary: Color(0xFF7C4DFF),
-        shadowColor: Color(0xFFC5CAE9),
-        fixedSize: Size(width, height),
-      ),
-    );
-  }
-}
+// class Execution extends BuilderButtons{
+//     Widget execution(BuildContext context){
+//     List<double> contextScreen;
+//     contextScreen = sizeOfContext(context, 0.469);
+//     double width = contextScreen[0];
+//     double height = contextScreen[1];
+//     return ElevatedButton(
+//       onPressed: () {},
+//       child: Text(
+//         'Execução',
+//         style: TextStyle(fontSize: 35.0),
+//       ),
+//       style: ElevatedButton.styleFrom(
+//         // shape: CircleBorder(),
+//         primary: Color(0xFF7C4DFF),
+//         shadowColor: Color(0xFFC5CAE9),
+//         fixedSize: Size(width, height),
+//       ),
+//     );
+//   }
+// }
 
 
-class TimeLine extends BuilderButtons{
-    Widget timeline(BuildContext context){
-    List<double> contextScreen;
-    contextScreen = sizeOfContext(context, 0.4);
-    double width = contextScreen[0];
-    double height = contextScreen[1];
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(
-        'Conograma',
-        style: TextStyle(fontSize: 35.0),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: CircleBorder(),
-        primary: Color(0xFF7C4DFF),
-        shadowColor: Color(0xFFC5CAE9),
-        fixedSize: Size(width, height),
-      ),
-    );
-  }
-}
+// class TimeLine extends BuilderButtons{
+//     Widget timeline(BuildContext context){
+//     List<double> contextScreen;
+//     contextScreen = sizeOfContext(context, 0.469);
+//     double width = contextScreen[0];
+//     double height = contextScreen[1];
+//     return ElevatedButton(
+//       onPressed: () {},
+//       child: Text(
+//         'Conograma',
+//         style: TextStyle(fontSize: 35.0),
+//       ),
+//       style: ElevatedButton.styleFrom(
+//         // shape: CircleBorder(),
+//         primary: Color(0xFF7C4DFF),
+//         shadowColor: Color(0xFFC5CAE9),
+//         fixedSize: Size(width, height),
+//       ),
+//     );
+//   }
+// }
