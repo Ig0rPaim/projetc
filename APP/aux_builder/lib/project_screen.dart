@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:aux_builder/builderButtons.dart';
+import 'package:aux_builder/utilities/builderButtons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

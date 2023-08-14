@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import '../builderButtons.dart';
+import '../utilities/builderButtons.dart';
 
 class ClientAndContract extends StatefulWidget {
   const ClientAndContract({Key? key}) : super(key: key);

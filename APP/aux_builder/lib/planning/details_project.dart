@@ -1,7 +1,7 @@
 // import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import '../builderButtons.dart';
+import '../utilities/builderButtons.dart';
 
 class DetailsOfProject extends StatefulWidget {
   const DetailsOfProject({Key? key}) : super(key: key);
