@@ -35,9 +35,21 @@ class _projectScreenState extends State<projectScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // drawer: Drawer(backgroundColor: Color.fromARGB(255, 110, 114, 136)),
+        appBar: AppBar(
+        backgroundColor: Color(0xFF3F51B5),
+        title: Center(
+          child: Text(
+            'project screen',
+            style: TextStyle(
+              fontSize: 35.0,
+            ),
+          ),
+        ),
+      ),
         backgroundColor: Color.fromARGB(255, 68, 56, 102),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -47,13 +59,9 @@ class _projectScreenState extends State<projectScreen> {
                 child: Planning().planning(context),
                 replacement: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  // mainAxisSize: MainAxisSize.max,
                   children: [
                     ScreenWithTwoButtons().button(context, 'Cronograma'),
-                    // TimeLine().timeline(context),
                     Padding(padding: EdgeInsets.all(4.0)),
-                    // Execution().execution(context)
                     ScreenWithTwoButtons().button(context, 'Execução'),
                   ],
                 ),

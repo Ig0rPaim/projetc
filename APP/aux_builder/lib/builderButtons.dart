@@ -13,7 +13,7 @@ class BuilderButtons {
 class ScreenWithTwoButtons extends BuilderButtons{
     Widget button(BuildContext context, String text){
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context,  0.469);
+    contextScreen = sizeOfContext(context,  0.39);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
@@ -36,7 +36,7 @@ class ScreenWithTwoButtons extends BuilderButtons{
 class ScreenWithThreeButtons extends BuilderButtons{
     Widget button(BuildContext context, String text){
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context,  0.309);
+    contextScreen = sizeOfContext(context,  0.256);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
@@ -58,32 +58,23 @@ class ScreenWithThreeButtons extends BuilderButtons{
 
 class Planning extends BuilderButtons{
     bool done = true;
-
-    // bool get done {
-    //   return done;
-    // }
-
-    // set done(bool newState) => done = newState;
-
     Widget planning(BuildContext context) {
-    // bool done;
-    List<double> contextScreen;
-    contextScreen = sizeOfContext(context, 0.5);
-    double width = contextScreen[0];
-    double height = contextScreen[1];
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(
-        'Planejamento',
-        style: TextStyle(fontSize: 35.0),
-      ),
-      style: ElevatedButton.styleFrom(
-        // shape: CircleBorder(),
-        primary: Color(0xFF7C4DFF),
-        shadowColor: Color(0xFFC5CAE9),
-        fixedSize: Size(width, height),
-      ),
-    );
+      List<double> contextScreen;
+      contextScreen = sizeOfContext(context, 0.5);
+      double width = contextScreen[0];
+      double height = contextScreen[1];
+      return ElevatedButton(
+        onPressed: () {},
+        child: Text(
+          'Planejamento',
+          style: TextStyle(fontSize: 35.0),
+        ),
+        style: ElevatedButton.styleFrom(
+          primary: Color(0xFF7C4DFF),
+          shadowColor: Color(0xFFC5CAE9),
+          fixedSize: Size(width, height),
+        ),
+      );
   }
 }
 
@@ -104,6 +95,18 @@ class AddNewProject extends BuilderButtons{
         fixedSize: Size(width, height),
       ),
     );
+  }
+}
+
+
+class NavigatorButtons{
+  Widget navigator(BuildContext context, String routes, String nameButton){
+    return ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, routes);
+              },
+              child: Text(nameButton),
+            );
   }
 }
 

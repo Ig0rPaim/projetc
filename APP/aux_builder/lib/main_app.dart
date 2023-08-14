@@ -22,7 +22,14 @@ class aux_builder extends StatelessWidget {
         primaryColorLight: Color(0xFFC5CAE9),
         accentColor: Color(0xFF7C4DFF),
       ),
-      home: DetailsOfProject(),
+      home: home_screen(),
+      initialRoute: '/',
+      routes: {
+        // '/': (context) => home_screen(),
+        '/planning/client_contract_screen':(context) => ClientAndContract(),
+        '/planning/details_project':(context) => DetailsOfProject(),
+        '/project_screen':(context) => projectScreen(),
+      },
       // routes:,
     );
   }

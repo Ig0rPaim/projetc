@@ -16,9 +16,20 @@ class _ClientAndContractState extends State<ClientAndContract> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+        backgroundColor: Color(0xFF3F51B5),
+        title: Center(
+          child: Text(
+            'HOME SCREEN',
+            style: TextStyle(
+              fontSize: 35.0,
+            ),
+          ),
+        ),
+      ),
         backgroundColor: Color.fromARGB(255, 68, 56, 102),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
