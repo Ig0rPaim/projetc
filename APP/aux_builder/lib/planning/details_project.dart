@@ -33,11 +33,11 @@ class _DetailsOfProjectState extends State<DetailsOfProject> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              ScreenWithThreeButtons().button(context, 'Leis'),
+              BuilderButtons.treeButton(context, 'Leis'),
               Padding(padding: EdgeInsets.all(4.0)),
-              ScreenWithThreeButtons().button(context, 'Plantas'),
+              BuilderButtons.treeButton(context, 'Plantas'),
               Padding(padding: EdgeInsets.all(4.0)),
-              ScreenWithThreeButtons().button(context, 'Materiais e \nMão de obra'),
+              BuilderButtons.treeButton(context, 'Materiais e \nMão de obra'),
             ],
           ),
         ),

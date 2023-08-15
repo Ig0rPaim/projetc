@@ -1,5 +1,5 @@
 import 'package:aux_builder/home_screen/home_screen.dart';
-import 'package:aux_builder/project_screen.dart';
+import 'package:aux_builder/project_screen_init/project_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aux_builder/planning/client_contract_screen.dart';
 import 'package:aux_builder/planning/details_project.dart';
@@ -21,12 +21,12 @@ class aux_builder extends StatelessWidget {
         primaryColorDark: const Color(0xFF303F9F),
         primaryColorLight: const Color(0xFFC5CAE9),
       ),
-      home: const home_screen(),
+      home: const HomeScreen(),
       initialRoute: '/',
       routes: {
         '/planning/client_contract_screen':(context) => const ClientAndContract(),
         '/planning/details_project':(context) => const DetailsOfProject(),
-        '/project_screen':(context) => const projectScreen(),
+        '/project_screen':(context) => const ProjectScreen(),
       },
     );
   }

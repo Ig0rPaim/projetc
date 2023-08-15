@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../utilities/builderButtons.dart';
 
 class ClientAndContract extends StatefulWidget {
@@ -33,9 +30,9 @@ class _ClientAndContractState extends State<ClientAndContract> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              ScreenWithTwoButtons().button(context, 'Cliente/Contrato'),
+              BuilderButtons.twoButton(context, 'Cliente/Contrato'),
               Padding(padding: EdgeInsets.all(4.0)),
-              ScreenWithTwoButtons().button(context, 'Projeto'),
+              BuilderButtons.twoButton(context, 'Projeto'),
             ],
           ),
         ),
