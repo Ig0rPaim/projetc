@@ -25,7 +25,6 @@ class _MyAppBarState extends State<MyAppBar> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // _drawer_navegaitor(),
               _profile(),
               _opitions(),
             ],

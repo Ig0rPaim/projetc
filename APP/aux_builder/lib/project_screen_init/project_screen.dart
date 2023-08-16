@@ -1,3 +1,4 @@
+import 'package:aux_builder/home_screen/appBar/appBar.dart';
 import 'package:aux_builder/utilities/builderButtons.dart';
 import 'package:flutter/material.dart';
 
@@ -50,26 +51,33 @@ class _ProjectScreenState extends State<ProjectScreen> {
         ),
       ),
         backgroundColor: Color.fromARGB(255, 68, 56, 102),
-        body: Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Visibility(
-                visible: done(),
-                child: BuilderButtons.planning(context),
-                replacement: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    BuilderButtons.twoButton(context, 'Cronograma'),
-                    Padding(padding: EdgeInsets.all(4.0)),
-                    BuilderButtons.twoButton(context, 'Execução'),
-                  ],
-                ),
+        body: Column(
+          children: [
+            // MyAppBar(
+            //   nameOfClient: 'Dev',
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(40.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Visibility(
+                    visible: done(),
+                    child: BuilderButtons.planning(context),
+                    replacement: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        BuilderButtons.twoButton(context, 'Cronograma'),
+                        Padding(padding: EdgeInsets.all(4.0)),
+                        BuilderButtons.twoButton(context, 'Execução'),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
