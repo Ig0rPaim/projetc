@@ -62,7 +62,7 @@ class BuilderButtons {
       ),
       style: ElevatedButton.styleFrom(
         // shape: CircleBorder(),
-        primary: Color(0xFF7C4DFF),
+        primary: Color(0xFF23238E),
         shadowColor: Color(0xFFC5CAE9),
         fixedSize: Size(width, height),
       ),

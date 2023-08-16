@@ -1,43 +1,45 @@
-import 'dart:math';
-
 import 'package:aux_builder/utilities/builderButtons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class projectScreen extends StatefulWidget {
-  const projectScreen({Key? key}) : super(key: key);
-
-  @override
-  State<projectScreen> createState() => _projectScreenState();
+void main() {
+  runApp(const Myapp());
 }
 
-class _projectScreenState extends State<projectScreen> {
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: const ProjectScreen(),
+      );
+  }
+}
+
+
+class ProjectScreen extends StatefulWidget {
+  const ProjectScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProjectScreen> createState() => _ProjectScreenState();
+}
+
+class _ProjectScreenState extends State<ProjectScreen> {
 
   bool done(){
-    if(Planning().done){
+    if(BuilderButtons().donePlanning){
       return false;
     }else{
       return true;
     }
   }
 
-  // double space(){
-  //   List<double> contextScreen;
-  //   contextScreen = BuilderButtons().sizeOfContext(context, 0.1);
-  //   double width = contextScreen[0];
-  //   double height = contextScreen[1];
-  //   return height;
-
-  // }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // drawer: Drawer(backgroundColor: Color.fromARGB(255, 110, 114, 136)),
         appBar: AppBar(
-        backgroundColor: Color(0xFF3F51B5),
+        backgroundColor: Color(0xFF23238E),
         title: Center(
           child: Text(
             'project screen',
@@ -56,13 +58,13 @@ class _projectScreenState extends State<projectScreen> {
             children: [
               Visibility(
                 visible: done(),
-                child: Planning().planning(context),
+                child: BuilderButtons.planning(context),
                 replacement: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    ScreenWithTwoButtons().button(context, 'Cronograma'),
+                    BuilderButtons.twoButton(context, 'Cronograma'),
                     Padding(padding: EdgeInsets.all(4.0)),
-                    ScreenWithTwoButtons().button(context, 'Execução'),
+                    BuilderButtons.twoButton(context, 'Execução'),
                   ],
                 ),
               ),

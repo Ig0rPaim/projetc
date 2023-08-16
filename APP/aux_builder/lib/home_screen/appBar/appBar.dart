@@ -1,20 +1,25 @@
+import 'package:aux_builder/controllers/controllerEyes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MyAppBar extends StatefulWidget {
-  const MyAppBar({Key? key}) : super(key: key);
+  String nameOfClient;
+
+  MyAppBar({
+    Key? key,
+    required this.nameOfClient,
+  }) : super(key: key);
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  String nameOfClient = 'Igor';
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF23238E),
+      color: const Color(0xFF23238E),
       child: Column(
         children: <Widget>[
           Row(
@@ -25,8 +30,8 @@ class _MyAppBarState extends State<MyAppBar> {
               _opitions(),
             ],
           ),
-          const SizedBox(height: 20),
-          _welcome(nameOfClient),
+          const SizedBox(height: 10),
+          _welcome(widget.nameOfClient),
         ],
       ),
     );
@@ -35,11 +40,10 @@ class _MyAppBarState extends State<MyAppBar> {
   _profile() => GestureDetector(
         onTap: () async {},
         child: Container(
-          margin: EdgeInsets.all(10),
+          margin: EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(80),
             color: Color.fromARGB(255, 81, 81, 214),
-            // color:  Color.fromARGB(255, 68, 56, 102),
           ),
           child: IconButton(
             onPressed: () async {},
@@ -51,15 +55,19 @@ class _MyAppBarState extends State<MyAppBar> {
         ),
       );
 
-
   _opitions() => Row(
         children: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              MdiIcons.eyeOutline,
-              color: Colors.white,
-            ),
+          GetBuilder<ControllerEyes>(
+            init: ControllerEyes(),
+            builder: (ControllerEyes) {
+              return IconButton(
+                onPressed: () => ControllerEyes.visible(),
+                icon: Icon(
+                  ControllerEyes.eyesValue? MdiIcons.eyeOutline : MdiIcons.eyeOff,
+                  color: Colors.white,
+                ),
+              );
+            }
           ),
           IconButton(
             onPressed: () {},
