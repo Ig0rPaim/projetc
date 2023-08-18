@@ -1,5 +1,6 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BuilderButtons {
   bool donePlanning = true;
@@ -84,7 +85,9 @@ class BuilderButtons {
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, '/buildingProject');
+      },
       child: Icon(Icons.add),
       style: ElevatedButton.styleFrom(
         shape: CircleBorder(),
