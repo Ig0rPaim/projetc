@@ -1,4 +1,5 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:aux_builder/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,22 +7,22 @@ class BuilderButtons {
   bool donePlanning = true;
 
   static planning(BuildContext context) {
-      List<double> contextScreen;
-      contextScreen = sizeOfContext(context, 0.5);
-      double width = contextScreen[0];
-      double height = contextScreen[1];
-      return ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          'Planejamento',
-          style: TextStyle(fontSize: 35.0),
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: Color(0xFF7C4DFF),
-          shadowColor: Color(0xFFC5CAE9),
-          fixedSize: Size(width, height),
-        ),
-      );
+    List<double> contextScreen;
+    contextScreen = sizeOfContext(context, 0.5);
+    double width = contextScreen[0];
+    double height = contextScreen[1];
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        'Planejamento',
+        style: TextStyle(fontSize: 35.0),
+      ),
+      style: ElevatedButton.styleFrom(
+        primary: Color(0xFF7C4DFF),
+        shadowColor: Color(0xFFC5CAE9),
+        fixedSize: Size(width, height),
+      ),
+    );
   }
 
   static List<double> sizeOfContext(BuildContext context, double propotion) {
@@ -30,9 +31,9 @@ class BuilderButtons {
     return screen;
   }
 
-  static Widget treeButton(BuildContext context, String text){
+  static Widget treeButton(BuildContext context, String text) {
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context,  0.256);
+    contextScreen = sizeOfContext(context, 0.256);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
@@ -50,9 +51,9 @@ class BuilderButtons {
     );
   }
 
-  static Widget twoButton(BuildContext context, String text){
+  static Widget twoButton(BuildContext context, String text) {
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context,  0.39);
+    contextScreen = sizeOfContext(context, 0.39);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
@@ -70,34 +71,66 @@ class BuilderButtons {
     );
   }
 
-  static Widget navigator(BuildContext context, String routes, String nameButton){
+  static Widget navigator(
+      BuildContext context, String routes, String nameButton) {
     return ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, routes);
-              },
-              child: Text(nameButton),
-            );
+      onPressed: () {
+        Navigator.pushNamed(context, routes);
+      },
+      child: Text(nameButton),
+    );
   }
 
   static Widget addNewProject(BuildContext context) {
+      List<double> contextScreen;
+      contextScreen = sizeOfContext(context, 0.1);
+      double width = contextScreen[0];
+      double height = contextScreen[1];
+      return ElevatedButton(
+        onPressed: () {
+          try {
+            Navigator.of(context).pushNamed('/buildingProject');
+          } catch (e, stackTrace) {
+            // Lidar com a exceção aqui (por exemplo, imprimir o erro ou mostrar uma mensagem de erro)
+            print("Erro na navegação: $e");
+            print("StackTrace: $stackTrace");
+          }
+        },
+        child: Icon(Icons.add),
+        style: ElevatedButton.styleFrom(
+          shape: CircleBorder(),
+          primary: Color(0xFF23238E),
+          shadowColor: Color(0xFFC5CAE9),
+          fixedSize: Size(width, height),
+        ),
+      );
+  }
+
+  static Widget buttonLogin(BuildContext context, LoginController controllerLogin) {
     List<double> contextScreen;
-    contextScreen = sizeOfContext(context, 0.1);
+    contextScreen = sizeOfContext(context, 0.15);
     double width = contextScreen[0];
     double height = contextScreen[1];
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/buildingProject');
+        controllerLogin.auth().then((result) {
+          if (result) {
+            print('Sucess');
+            Navigator.of(context).pushNamed('home_screen');
+          } else {
+            print('!!!!!!error!!!!!!');
+          }
+        });
       },
-      child: Icon(Icons.add),
       style: ElevatedButton.styleFrom(
-        shape: CircleBorder(),
-        primary: Color(0xFF23238E),
-        shadowColor: Color(0xFFC5CAE9),
-        fixedSize: Size(width, height),
+        fixedSize: Size(height, width),
+      ),
+      child: const Text(
+        'Entrar',
+        style: TextStyle(fontSize: 20),
       ),
     );
   }
-
 }
 
 // class ScreenWithTwoButtons extends BuilderButtons{

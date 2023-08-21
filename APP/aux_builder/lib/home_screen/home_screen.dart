@@ -4,7 +4,8 @@ import 'package:aux_builder/utilities/builderButtons.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final BuildContext? contextMain;
+  const HomeScreen({Key? key, this.contextMain}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -12,15 +13,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<ProjectsInList> listProjects = [
-    ProjectsInList(nameOfProject: "Projeto 1", dateOfCreted: "10/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 2", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 3", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 4", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 5", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 6", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 7", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 8", dateOfCreted: "15/08/2023"),
-    ProjectsInList(nameOfProject: "Projeto 9", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 1", dateOfCreted: "10/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 2", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 3", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 4", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 5", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 6", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 7", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 8", dateOfCreted: "15/08/2023"),
+    const ProjectsInList(
+        nameOfProject: "Projeto 9", dateOfCreted: "15/08/2023"),
   ];
 
   void newProjects(ProjectsInList project) =>
@@ -44,7 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     margin: EdgeInsets.all(10),
                     child: _showItens(),
                   ),
-                  Positioned(bottom: 16, left: 16, child: _addNewProject()),
+                  Positioned(
+                    bottom: 16,
+                    left: 16,
+                    child: _addNewProject(context),
+                  ),
                 ],
               ),
             ),
@@ -54,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  _addNewProject() => Padding(
+  _addNewProject(BuildContext context) => Padding(
         padding: const EdgeInsets.only(left: 20, bottom: 5),
         child: Align(
           alignment: Alignment.centerLeft,

@@ -2,20 +2,20 @@ import 'package:aux_builder/home_screen/appBar/appBar.dart';
 import 'package:aux_builder/utilities/builderButtons.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const Myapp());
-}
+// void main() {
+//   runApp(const Myapp());
+// }
 
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+// class Myapp extends StatelessWidget {
+//   const Myapp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const ProjectScreen(),
-      );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: const ProjectScreen(),
+//       );
+//   }
+// }
 
 
 class ProjectScreen extends StatefulWidget {
