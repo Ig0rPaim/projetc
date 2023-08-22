@@ -6,7 +6,7 @@ import 'package:aux_builder/project_screen_init/project_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aux_builder/planning/client_contract_screen.dart';
 import 'package:aux_builder/planning/details_project.dart';
-import 'package:aux_builder/buildingProject/buildingRequeriment_teste.dart';
+// import 'package:aux_builder/buildingProject/buildingRequeriment_teste.dart';
 
 void main() {
   runApp(const AuxBuilder());
