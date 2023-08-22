@@ -2,11 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:aux_builder/controllers/login_controller.dart';
 
-class Forms{
-
-
-  Widget formLogin(LoginController controllerLogin){
-    
+class Forms {
+  Widget formLogin(LoginController controllerLogin) {
     return Form(
       child: Column(
         children: [
@@ -23,9 +20,9 @@ class Forms{
               contentPadding: const EdgeInsets.all(15),
             ),
           ),
-
-          const SizedBox(height: 10,),
-
+          const SizedBox(
+            height: 10,
+          ),
           TextFormField(
             onChanged: controllerLogin.setPass,
             obscureText: true,
@@ -45,4 +42,23 @@ class Forms{
     );
   }
 
+  Widget formNameOfProject(TextEditingController controller) {
+    // TextEditingController controller = TextEditingController();
+    return Form(
+      child: TextFormField(
+        controller: controller,
+        // onChanged: (value) => name = value,
+        // onChanged: controllerLogin.setUser,
+        decoration: InputDecoration(
+          filled: true,
+          // labelText: "Email",
+          fillColor: Colors.white,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          hintText: "digite o nome do seu Projeto",
+          isDense: true,
+          contentPadding: const EdgeInsets.all(15),
+        ),
+      ),
+    );
+  }
 }

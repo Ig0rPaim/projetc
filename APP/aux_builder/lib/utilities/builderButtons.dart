@@ -89,7 +89,7 @@ class BuilderButtons {
       return ElevatedButton(
         onPressed: () {
           try {
-            Navigator.of(context).pushNamed('/buildingProject');
+            Navigator.of(context).pushNamed('/buildingName');
           } catch (e, stackTrace) {
             // Lidar com a exceção aqui (por exemplo, imprimir o erro ou mostrar uma mensagem de erro)
             print("Erro na navegação: $e");
@@ -116,7 +116,7 @@ class BuilderButtons {
         controllerLogin.auth().then((result) {
           if (result) {
             print('Sucess');
-            Navigator.of(context).pushNamed('home_screen');
+            Navigator.of(context).pushNamed('/home_screen');
           } else {
             print('!!!!!!error!!!!!!');
           }
@@ -131,6 +131,28 @@ class BuilderButtons {
       ),
     );
   }
+
+  static Widget buttonProx(BuildContext context, String nameofProject) {
+    List<double> contextScreen;
+    contextScreen = sizeOfContext(context, 0.15);
+    double width = contextScreen[0];
+    double height = contextScreen[1];
+    return ElevatedButton(
+      onPressed: () {
+        String teste = nameofProject;
+        Navigator.of(context).pushNamed('/buildingRequeriment', arguments: {'name of Project': nameofProject});
+        // print('!!!!!!!!!!!!!${teste}!!!!!!!!!!!!!!');
+      },
+      style: ElevatedButton.styleFrom(
+        fixedSize: Size(height, width),
+      ),
+      child: const Text(
+        'Próximo',
+        style: TextStyle(fontSize: 20),
+      ),
+    );
+  }
+
 }
 
 // class ScreenWithTwoButtons extends BuilderButtons{

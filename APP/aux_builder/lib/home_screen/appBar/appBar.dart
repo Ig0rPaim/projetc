@@ -4,11 +4,11 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MyAppBar extends StatefulWidget {
-  String nameOfClient;
+  String mensageAppBar;
 
   MyAppBar({
     Key? key,
-    required this.nameOfClient,
+    required this.mensageAppBar,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class _MyAppBarState extends State<MyAppBar> {
             ],
           ),
           const SizedBox(height: 10),
-          _welcome(widget.nameOfClient),
+          _welcome(widget.mensageAppBar),
         ],
       ),
     );
@@ -45,7 +45,9 @@ class _MyAppBarState extends State<MyAppBar> {
             color: Color.fromARGB(255, 81, 81, 214),
           ),
           child: IconButton(
-            onPressed: () async {},
+            onPressed: () async {
+              Navigator.of(context).pushNamed('/home_screen');
+            },
             icon: Icon(
               MdiIcons.account,
               color: Colors.white,
@@ -85,11 +87,11 @@ class _MyAppBarState extends State<MyAppBar> {
         ],
       );
 
-  _welcome(String nameOfClient) => Container(
+  _welcome(String mensageAppBar) => Container(
         margin: EdgeInsets.only(left: 20, bottom: 20),
         alignment: Alignment.centerLeft,
         child: Text(
-          'Olá, $nameOfClient',
+          mensageAppBar,
           style: TextStyle(
             fontSize: 30,
             color: Colors.white,
